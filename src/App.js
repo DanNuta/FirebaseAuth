@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {footbalFirestore, footbalAuth} from "../src/firebase/config";
+import {useState} from "react";
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import Home from "../src/pages/home";
+import Team from "../src/pages/team";
+import Navbar from "./components/Navbar";
+import AddNewTeam from "./pages/AddNewTeam";
+import TeamItSefl from "./pages/TeamItSelf";
 
-function App() {
+
+const App = () =>{
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+
+         <Navbar/>
+
+
+    <Routes>
+       <Route path="/" element={<Home/>}/>
+       <Route path="/echipe/:id" element={<TeamItSefl/>} />
+       <Route path='/echipe' element={<Team/>}/>
+       <Route path="/new-team" element={<AddNewTeam/>}/>
+
+    </Routes>
+
+
+    </BrowserRouter>
+
+  )
 }
+
 
 export default App;
