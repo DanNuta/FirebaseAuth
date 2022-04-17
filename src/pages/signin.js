@@ -11,10 +11,8 @@ const Signin = () =>{
     const send = (e) =>{
         e.preventDefault();
 
-        const obj = {
-            email: email,
-            password: password
-        }
+        setEmail("")
+        setPassword("")
 
         signup(email, password)
 
@@ -22,8 +20,8 @@ const Signin = () =>{
 
     return (
         <form onSubmit={send}>
-            <input onChange={(e) => setEmail(e.target.value)} type="email"  placeholder="Email"/>
-            <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password"/>
+            <input onChange={(e) => setEmail(e.target.value)} type="email"  placeholder="Email" value={email}/>
+            <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" value={password}/>
             <button>Create acount</button>
             {error && <p>{error}</p>}
         </form>
