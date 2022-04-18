@@ -1,7 +1,10 @@
 import {useState} from "react";
 import useLogin from "../hook/useLogin";
+import { useNavigate } from "react-router-dom";
 
 const Login = () =>{
+
+    const lacation = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -14,6 +17,7 @@ const Login = () =>{
         login(email, password)
         setEmail("")
         setPassword("")
+        lacation("/")
 
     }
 

@@ -21,13 +21,14 @@ export const AuthContext = (props) =>{
 
         footbalAuth.onAuthStateChanged((user) =>{
             setUser(user)
+            setAuthIsReady(true)
         })
 
     }, [])
 
     return (
 
-        <Auth.Provider value={{user, setUser}}>
+        <Auth.Provider value={{user, setUser, authIsReady}}>
             {props.children}
         </Auth.Provider>
 
