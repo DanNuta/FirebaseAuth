@@ -9,24 +9,26 @@ const useAuth = () =>{
 
     const {setUser} = useContext(Auth);
 
-    console.log(setUser)
+    
 
 
 
        async function signup(email, password){
-            setIsPending(true);
+           
+           try{
 
-            try{
+                setError(null)
+                setIsPending(true)
                 const rez = await footbalAuth.createUserWithEmailAndPassword(email, password);
-                console.log(rez.user)
-
                 setUser(rez.user)
+                setIsPending(false)
 
             }catch(e){
                 setError(e.message)
                 setIsPending(false)
             }
-            setIsPending(false)
+            
+            
         }
 
 

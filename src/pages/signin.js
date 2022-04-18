@@ -22,7 +22,7 @@ const Signin = () =>{
         <form onSubmit={send}>
             <input onChange={(e) => setEmail(e.target.value)} type="email"  placeholder="Email" value={email}/>
             <input onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" value={password}/>
-            <button>Create acount</button>
+            {isPending ? <button>Loading...</button> : <button>Create acount</button>}
             {error && <p>{error}</p>}
         </form>
     )

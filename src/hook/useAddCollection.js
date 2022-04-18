@@ -14,7 +14,7 @@ function useAddCollection(){
             setIsPending(false)  
         }catch(e){
             setIsPending(false)
-            setError(e.messege);
+            setError(e.messege)
 
         }
 
