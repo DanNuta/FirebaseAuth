@@ -18,7 +18,7 @@ const Signin = () =>{
         setPassword("")
 
         signup(email, password)
-        navigate("/")
+       //navigate("/")
 
     }
 

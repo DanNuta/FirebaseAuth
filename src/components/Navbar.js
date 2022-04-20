@@ -13,7 +13,7 @@ const Navbar = () =>{
             <ul>
                 {user ? "" : <li><Link to="signup">Signup</Link></li>}
                 {user ? "" :  <li><Link to="login">Login</Link></li>}
-                {user ? <li><Link to="home">Home</Link></li> : ""}
+                {user ? <li><Link to="/">Home</Link></li> : ""}
                 {user ? <li><Link to="echipe">Echipe</Link></li> : ""} 
                 {user ? <li><Link to='new-team'>New Team</Link></li> : ""}
                 {user ? <li><button onClick={logout}>Logout</button></li> : ""}

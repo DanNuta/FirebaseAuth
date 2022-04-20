@@ -18,6 +18,7 @@ const App = () =>{
   const {authIsReady, user} = useContext(Auth);
 
   return (
+    
     <div>
       {authIsReady && <BrowserRouter>
 
