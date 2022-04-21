@@ -16,9 +16,9 @@ function useCollection(collection, _query){
 
         let colection = footbalFirestore.collection(collection)
 
-        // if(query){
-        //     colection =  colection.where(...query)
-        // }
+        if(query){
+            colection =  colection.where(...query)
+        }
 
 
         colection.onSnapshot(snapshot => {

@@ -12,7 +12,7 @@ const Team = () =>{
 
 
 
-    const {data, error, isPending} = useCollection("echipe_de_fotbal")
+    const {data, error, isPending} = useCollection("echipe_de_fotbal", ["uid", "==", user.uid])
 
    
     return (
