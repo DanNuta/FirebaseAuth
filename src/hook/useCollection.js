@@ -1,9 +1,11 @@
 import {footbalFirestore} from "../firebase/config";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 
 
 
-function useCollection(collection){
+function useCollection(collection, _query){
+
+    const query = useRef(_query).current;
 
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
@@ -11,7 +13,15 @@ function useCollection(collection){
     
     
     useEffect(() =>{
-        footbalFirestore.collection(collection).onSnapshot(snapshot => {
+
+        let colection = footbalFirestore.collection(collection)
+
+        // if(query){
+        //     colection =  colection.where(...query)
+        // }
+
+
+        colection.onSnapshot(snapshot => {
             if(snapshot.empty){
                 setError("Acesta colectie nu contine date")
             }else{
@@ -27,7 +37,7 @@ function useCollection(collection){
             }
         })
 
-    }, [])
+    }, [collection, query])
 
 
 

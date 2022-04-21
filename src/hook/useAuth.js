@@ -20,6 +20,7 @@ const useAuth = () =>{
                 setError(null)
                 setIsPending(true)
                 const rez = await footbalAuth.createUserWithEmailAndPassword(email, password);
+                console.log(rez.user.uid)
                 setUser(rez.user)
                 setIsPending(false)
 
