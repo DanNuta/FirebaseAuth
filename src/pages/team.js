@@ -23,6 +23,8 @@ const Team = () =>{
                 <li key={item.id}><Link to={`${item.id}`}>{item.echipa}</Link></li>
             ))}
 
+            {error && <p>{error}</p>}
+
              
                
         </div>
